@@ -1,140 +1,155 @@
 /* Variables */
 :root {
-    /* Colors - Balanced between Everforest and Modern Dark */
-    --bg: #191a1b;
-    --bg-secondary: #272e33;
-    --text: #fefefe;
-    --text-secondary: #9da9a0;
-    --accent: #83c092;
-    --accent-secondary: #7fbbb3;
-    --border: #323c41;
-    --badge-bg: #384b55;
-    --badge-text: #a7c080;
+    /* Colors */
+    --color-bg-primary: #191a1b;
+    --color-bg-secondary: #272e33;
+    --color-text-primary: #fefefe;
+    --color-text-secondary: #9da9a0;
+    --color-accent-primary: #83c092;
+    --color-accent-secondary: #7fbbb3;
+    --color-border: #323c41;
+    --color-badge-bg: #384b55;
+    --color-badge-text: #a7c080;
+    --color-heading-secondary: #d3c7aa;
+    --color-text-muted: #859289;
     
     /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing: 1rem;
-    --spacing-lg: 1.5rem;
-    --max-width: 768px;
+    --space-xxs: 0.125rem;
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    
+    /* Layout */
+    --container-max-width: 768px;
+    
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.75rem;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
 }
 
-/* Base styles */
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base styles */
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     line-height: 1.5;
-    color: var(--text);
-    background-color: var(--bg);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
 }
 
 main {
-    max-width: var(--max-width);
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: var(--spacing);
+    padding: var(--space-md);
 }
 
 /* Typography */
 h1 {
-    margin: 0;
-    font-size: 1.75rem;
+    font-size: var(--font-size-xl);
     font-weight: 700;
     letter-spacing: -0.025em;
-    color: var(--text);
+    color: var(--color-text-primary);
 }
 
 h2 {
-    margin-bottom: var(--spacing);
-    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-lg);
     font-weight: 600;
     letter-spacing: -0.025em;
-    color: #d3c7aa;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: var(--spacing-xs);
+    color: var(--color-heading-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-xs);
 }
 
-
-/* Header section */
+/* Header */
 header {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing);
-    border-radius: 8px;
-    border: 1px solid var(--border);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
 }
 
 .header-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
-    color: var(--bg-secondary);
+    gap: var(--space-xs);
+    color: var(--color-bg-secondary);
 }
 
 .header-main {
     display: flex;
-    gap: var(--spacing);
+    gap: var(--space-md);
     align-items: center;
 }
 
 .header-text {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--space-xs);
 }
 
 .profile-image {
     width: 64px;
     height: 64px;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     object-fit: cover;
 }
 
 .title {
-    font-size: 1rem;
-    color: var(--text-secondary);
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
 }
 
 .company {
-    color: var(--accent);
+    color: var(--color-accent-primary);
     font-weight: 500;
 }
 
+/* Social Links */
 .social-links {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
 .social-link {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    color: var(--text);
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-primary);
     text-decoration: none;
-    background-color: var(--badge-bg);
-    border-radius: 4px;
+    background-color: var(--color-badge-bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
     transition: all 0.2s ease;
-    border: 1px solid var(--border);
-    font-size: 0.875rem;
 }
 
 .social-link:hover {
-    background-color: var(--bg);
-    border-color: var(--accent);
-    color: var(--accent);
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
 }
 
-/* Section layouts */
+/* Sections */
 .section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--space-lg);
 }
 
-/* Job listings */
+/* Jobs */
 .job {
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--space-md);
 }
 
 .job:last-child {
@@ -144,73 +159,72 @@ header {
 .job-header {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--space-xs);
 }
 
 .job-title {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
 .position {
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     font-weight: 500;
-    color: var(--text);
+    color: var(--color-text-primary);
 }
 
 .at {
-    color: #859289;
+    color: var(--color-text-muted);
 }
 
 .company-name {
-    color: var(--accent);
+    color: var(--color-accent-primary);
     font-weight: 600;
 }
 
 .date {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
 }
 
-/* Skills section */
+/* Skills */
 .skills {
     display: grid;
-    gap: var(--spacing);
+    gap: var(--space-md);
 }
 
 .skill-group {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: var(--space-xs);
 }
 
 .skill-tag {
-    padding: 0.125rem 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text);
-    background-color: var(--badge-bg);
-    border-radius: 4px;
-    border: 1px solid var(--border);
+    padding: var(--space-xxs) var(--space-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-primary);
+    background-color: var(--color-badge-bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
     transition: all 0.2s ease;
 }
 
 .skill-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
 }
 
-/* Responsive adjustments */
+/* Media Queries */
 @media (max-width: 640px) {
-    :root {
-        --spacing: 0.75rem;
-        --spacing-lg: 1rem;
+    main {
+        padding: var(--space-sm);
     }
 
     .header-main {
@@ -229,5 +243,9 @@ header {
 
     .job-title {
         width: 100%;
+    }
+
+    .section {
+        margin-bottom: var(--space-md);
     }
 }
