@@ -8,144 +8,122 @@
         content="Kyle Bridgemohansingh - Software Engineer portfolio showcasing work experience, education, and skills.">
     <title>Kyle Bridgemohansingh - Software Engineer</title>
     <link href="styles.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-white font-poppins min-h-screen bg-fixed">
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
-
-    <main class="container mx-auto px-4 py-12 max-w-5xl">
-        <header class="text-center mb-8 glass rounded-lg p-6 shadow-xl">
-            <div class="flex flex-col items-center">
-                <img src="headshot.jpg" alt="Kyle Bridgemohansingh"
-                    class="w-24 h-24 rounded-full mb-4 border-1 border-blue-400 object-cover">
-                <h1 class="text-2xl font-bold mb-1">Kyle Bridgemohansingh</h1>
-                <p class="text-sm text-blue-400 mb-4">Software Engineer</p>
-                <a href="http://linkedin.com/in/kylebsingh"
-                    class="flex items-center px-4 py-2 bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-all duration-200 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
-                </a>
+<body>
+    <main>
+        <header>
+            <div class="header-content">
+                <div class="header-main">
+                    <img src="headshot.jpg" alt="Kyle Bridgemohansingh" class="profile-image">
+                    <div class="header-text">
+                        <h1>Kyle Bridgemohansingh</h1>
+                        <div class="social-links">
+                            <a href="http://linkedin.com/in/kylebsingh" class="social-link">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <div class="space-y-8">
-
-            <section class="glass rounded-xl p-4 md:p-6 shadow-xl">
-                <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 border-b border-blue-400 pb-2 text-blue-300">
-                    Work Experience</h2>
-                <div class="space-y-6 md:space-y-8">
-                    <!-- Google -->
-                    <div>
-                        <div class="flex items-center mb-3">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/240px-Google_%22G%22_logo.svg.png"
-                                alt="Google Logo" class="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 object-contain">
-                            <h3 class="text-1xl font-semibold">Google</h3>
+        <section class="section">
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Software Engineer <span class="at">@</span><span class="company-name"> Google</span></span>
                         </div>
-                        <div
-                            class="flex flex-col sm:flex-row justify-between sm:items-center mb-2 space-y-2 sm:space-y-0">
-                            <div class="flex items-center">
-                                <span
-                                    class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-blue-500 text-white">FTE</span>
-                                <span class="text-sm text-gray-300">Software Engineer</span>
-                            </div>
-                            <span class="text-sm font-medium text-blue-300">May 2022 - Present</span>
-                        </div>
-                    </div>
-
-                    <!-- Amazon -->
-                    <div>
-                        <div class="flex items-center mb-3">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/1200px-Amazon_icon.svg.png"
-                                alt="Amazon Logo" class="w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 object-contain">
-                            <h3 class="text-1xl font-semibold">Amazon</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div
-                                class="flex flex-col sm:flex-row justify-between sm:items-center space-y-2 sm:space-y-0">
-                                <div class="flex items-center">
-                                    <span
-                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-blue-500 text-white">FTE</span>
-                                    <span class="text-sm text-gray-300">Software Development Engineer</span>
-                                </div>
-                                <span class="text-sm font-medium text-blue-300">May 2019 - Jan 2022</span>
-                            </div>
-                            <div
-                                class="flex flex-col sm:flex-row justify-between sm:items-center space-y-2 sm:space-y-0">
-                                <div class="flex items-center">
-                                    <span
-                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-700 text-white">Intern</span>
-                                    <span class="text-sm text-gray-300">Software Development Engineer</span>
-                                </div>
-                                <span class="text-sm font-medium text-blue-300">Jan 2017 - Apr 2017</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- UHN -->
-                    <div>
-                        <div class="flex items-center mb-3">
-                            <i
-                                class="fas fa-hospital w-4 md:w-5 h-4 md:h-5 mr-2 md:mr-3 text-red-500 flex items-center justify-center"></i>
-                            <h3 class="text-1xl  font-semibold break-words">University Health Network</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div
-                                class="flex flex-col sm:flex-row justify-between sm:items-center space-y-2 sm:space-y-0">
-                                <div class="flex items-center">
-                                    <span
-                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-700 text-white">Intern</span>
-                                    <span class="text-sm text-gray-300">Developer</span>
-                                </div>
-                                <span class="text-sm font-medium text-blue-300">Sep 2015 - Dec 2015</span>
-                            </div>
-                            <div
-                                class="flex flex-col sm:flex-row justify-between sm:items-center space-y-2 sm:space-y-0">
-                                <div class="flex items-center">
-                                    <span
-                                        class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-700 text-white">Intern</span>
-                                    <span class="text-sm text-gray-300">Developer</span>
-                                </div>
-                                <span class="text-sm font-medium text-blue-300">Jan 2015 - May 2015</span>
-                            </div>
-                        </div>
+                        <span class="date">May 2022 - Present</span>
                     </div>
                 </div>
-            </section>
 
-            <section class="glass rounded-xl p-6 shadow-xl">
-                <h2 class="text-2xl font-semibold mb-4 border-b border-blue-400 pb-2 text-blue-300">Education</h2>
-                <div>
-                    <h3 class="text-1xl font-semibold mb-2">University of Toronto</h3>
-                    <p class="text-sm text-gray-300 text-base">Honours BSc. in Computer Science</p>
-                </div>
-            </section>
-
-            <section class="glass rounded-xl p-6 shadow-xl">
-                <h2 class="text-2xl font-semibold mb-4 border-b border-blue-400 pb-2 text-blue-300">Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <h3 class="text-1xl font-semibold mb-2 ">Languages</h3>
-                        <p class="text-gray-300 text-sm">Python, JavaScript, TypeScript, Java, Clojure, Go, C#, SQL,
-                            HTML,
-                            CSS</p>
-                    </div>
-                    <div>
-                        <h3 class="text-1xl font-semibold mb-2 ">Popular Frameworks</h3>
-                        <p class="text-gray-300 text-sm">Angular, React</p>
-                    </div>
-                    <div>
-                        <h3 class="text-1xl font-semibold mb-2 ">Tools & Technologies</h3>
-                        <p class="text-gray-300 text-sm">Git, SVN, VSCode, IntelliJ, Windows, Linux, MacOS</p>
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Software Development Engineer <span class="at">@</span><span class="company-name"> Amazon</span></span>
+                        </div>
+                        <span class="date">May 2019 - Jan 2022</span>
                     </div>
                 </div>
-            </section>
-        </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Software Development Engineer Intern <span class="at">@</span><span class="company-name"> Amazon</span></span>
+                        </div>
+                        <span class="date">Jan 2017 - Apr 2017</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Developer Intern <span class="at">@</span><span class="company-name"> University Health Network</span></span>
+                        </div>
+                        <span class="date">Sep 2015 - Dec 2015</span>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Developer Intern <span class="at">@</span><span class="company-name"> University Health Network</span></span>
+                        </div>
+                        <span class="date">Jan 2015 - May 2015</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">
+                            <span class="position">Honours BSc. in Computer Science <span class="company-name">@ University of Toronto</span></span>
+                        </div>
+                        <span class="date">July 2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-group">
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Clojure</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-tags">
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">SVN</span>
+                        <span class="skill-tag">VSCode</span>
+                        <span class="skill-tag">IntelliJ</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">MacOS</span>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
