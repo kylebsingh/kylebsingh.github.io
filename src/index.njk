@@ -6,22 +6,18 @@ title: Home
 <div class="container resume">
   <header class="hero">
     <h1>Kyle Bridgemohansingh</h1>
-    <p class="tagline">Software Engineer</p>
-    <p class="location">Hayward, California</p>
+    <p class="tagline">Software Engineer @ Google · San Francisco Bay Area</p>
     <div class="contact-links">
-      <a href="https://github.com/kylebsingh" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/kylebsingh" target="_blank">LinkedIn</a>
-      <a href="mailto:kyle@example.com">Email</a>
     </div>
   </header>
 
   <section class="about">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <p>
-      Software Engineer. Always excited to hear about new opportunities! I'm passionate about
-      building scalable systems and solving complex technical challenges. With a strong foundation
-      in computer science and hands-on experience across various domains, I bring both theoretical
-      knowledge and practical expertise to every project.
+      Software Engineer with experience building scalable systems at Google and Amazon.
+      Specialized in testing infrastructure, data visualization, and distributed systems.
+      Always excited to hear about new opportunities.
     </p>
   </section>
 
@@ -29,92 +25,160 @@ title: Home
     <h2>Experience</h2>
 
     <div class="job">
-      <h3>Software Engineer</h3>
-      <p class="company">Google</p>
-      <p class="date">Present</p>
-      <p class="location-info">California, United States</p>
-      <ul>
-        <li>Contributing to large-scale distributed systems</li>
-        <li>Working on cutting-edge technology solutions</li>
-        <li>Collaborating with cross-functional teams</li>
-      </ul>
+      <div class="job-header">
+        <div>
+          <h3>Software Engineer</h3>
+          <p class="company">Google · Full-time</p>
+        </div>
+        <div class="job-meta">
+          <p class="date">May 2022 - Present</p>
+          <p class="location-info">California, United States</p>
+        </div>
+      </div>
+      <p class="job-summary">Building testing infrastructure and visualization tools for Android engineering teams.</p>
+      <details>
+        <summary>Show details</summary>
+        <ul>
+          <li>Led design and implementation of an Angular-based test visualization platform capable of processing 5M+ datapoints with 100ms updates, unifying device metrics, logs, and videos in a single interface that measurably accelerated issue diagnosis across multiple Android engineering teams</li>
+          <li>Developed a test results aggregation system that consolidated physical and virtual device-specific test data, creating a standardized solution that improved access to test artifacts and simplified results analysis for multi-device ecosystem teams</li>
+          <li>Contributed to Android testing infrastructure by implementing Bluetooth shadow classes for Robolectric, enabling unit testing for Bluetooth-dependent features without hardware dependencies</li>
+        </ul>
+      </details>
     </div>
 
     <div class="job">
-      <h3>Software Engineer</h3>
-      <p class="company">Previous Positions</p>
-      <p class="date">Various Locations</p>
-      <ul>
-        <li>Developed and maintained production systems across multiple companies</li>
-        <li>Experience across Seattle (United States) and Toronto (Canada)</li>
-        <li>Remote work experience with distributed teams</li>
-      </ul>
+      <div class="job-header">
+        <div>
+          <h3>Software Development Engineer</h3>
+          <p class="company">Amazon · Full-time</p>
+        </div>
+        <div class="job-meta">
+          <p class="date">Mar 2019 - Jan 2022</p>
+          <p class="location-info">Remote</p>
+        </div>
+      </div>
+      <p class="job-summary">Developed payment systems and infrastructure for customer checkout, improving latency and reliability.</p>
+      <details>
+        <summary>Show details</summary>
+        <ul>
+          <li>Developed an internal automated ordering system reducing individual test duration to support changes required by the European Payment Services Directive and future marketplace launches</li>
+          <li>Designed persistence feature to eliminate the chance of looping upon customer payment challenge resolution, improving service consistency and customer experience</li>
+          <li>Investigated and identified a ~15% latency overhead affecting ~80% of calls in scope within customer checkout, which later improved to a latency-neutral state</li>
+          <li>Mentored intern in designing and developing a successful proof of concept for a containerized widget service</li>
+          <li>Implemented alarm automation, latency guard railing, and standard operating procedure runbook, enhancing operational excellence leading to successful 2020 and 2021 peaks</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Software Development Engineer Intern</h3>
+          <p class="company">Amazon</p>
+        </div>
+        <div class="job-meta">
+          <p class="date">Jan 2017 - Apr 2017</p>
+          <p class="location-info">Seattle, United States</p>
+        </div>
+      </div>
+      <p class="job-summary">Built the visual interface for the 'Alexa for PC' app announced at CES 2018.</p>
+      <details>
+        <summary>Show details</summary>
+        <ul>
+          <li>Developed the visual interface of the 'Alexa for PC' app bundled with PCs from various OEMs as announced at CES 2018</li>
+          <li>Connected relevant Alexa Voice Service (AVS) interfaces to provide visual content based on user queries</li>
+          <li>Created a directive deserializer to convert JSON requests into C# classes which the GUI uses</li>
+          <li>Wrote thorough unit tests in C# to ensure maintainability for future internal and external development</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Developer Intern</h3>
+          <p class="company">University Health Network</p>
+        </div>
+        <div class="job-meta">
+          <p class="date">Sep 2015 - Dec 2015</p>
+          <p class="location-info">Toronto, Canada</p>
+        </div>
+      </div>
+      <p class="job-summary">Developed healthcare platform for patient records using Clojure and ReactJS.</p>
+      <details>
+        <summary>Show details</summary>
+        <ul>
+          <li>Developed a healthcare platform to document and communicate patient records between teams using Clojure</li>
+          <li>Translated data in organization databases and services to maintain authenticity and validity</li>
+          <li>Improved hospital processes by utilizing WebSockets to implement concurrent editing features</li>
+          <li>Designed an intuitive UI/UX using Reagent (ReactJS) for healthcare practitioners while meeting the needs of the industry</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <h3>Developer Intern</h3>
+          <p class="company">University Health Network</p>
+        </div>
+        <div class="job-meta">
+          <p class="date">Jan 2015 - May 2015</p>
+          <p class="location-info">Greater Toronto Area, Canada</p>
+        </div>
+      </div>
+      <p class="job-summary">Created interactive wayfinding web application for hospital navigation.</p>
+      <details>
+        <summary>Show details</summary>
+        <ul>
+          <li>Researched and developed an interactive wayfinding web application from concept to pilot leveraging the Phaser framework</li>
+          <li>Analyzed and compared multiple algorithms to optimize the chosen path between floors</li>
+          <li>Implemented a responsive UI/UX with Reagent (ReactJS), which utilizes appropriate features of the user's device</li>
+          <li>Collaborated with project managers and administrative assistants to launch a successful pilot</li>
+        </ul>
+      </details>
     </div>
   </section>
 
   <section class="skills">
-    <h2>Technical Skills</h2>
+    <h2>Skills</h2>
     <div class="skill-grid">
       <div class="skill-category">
-        <h4>Core Competencies</h4>
-        <p>Data Structures, Algorithms, System Design</p>
+        <h4>Languages</h4>
+        <p>Python, Clojure, C#, JavaScript/TypeScript</p>
       </div>
       <div class="skill-category">
-        <h4>Systems</h4>
-        <p>Operating Systems, Databases, Distributed Systems</p>
+        <h4>Frontend</h4>
+        <p>Angular, React, Reagent (ReactJS), HTML/CSS</p>
       </div>
       <div class="skill-category">
-        <h4>Development</h4>
-        <p>Software Engineering, Programming Languages</p>
+        <h4>Backend & Infrastructure</h4>
+        <p>Testing Infrastructure, Distributed Systems, WebSockets</p>
       </div>
       <div class="skill-category">
-        <h4>Theory</h4>
-        <p>Computational Complexity, Algorithm Analysis</p>
+        <h4>Areas of Expertise</h4>
+        <p>Android Testing, Data Visualization, System Design</p>
       </div>
     </div>
   </section>
 
   <section class="education">
     <h2>Education</h2>
+
     <div class="degree">
-      <h3>Computer Science</h3>
+      <h3>Honours Bachelor's Degree, Computer Science</h3>
       <p class="school">University of Toronto Scarborough</p>
       <p class="date">2012 - 2019</p>
       <p class="coursework">
-        Relevant coursework: Data Structures, Operating Systems, Software Engineering,
-        Databases, Programming Languages, Computational Complexity
+        Relevant coursework: Computability and Computational Complexity, Computer Organization,
+        Data Structures, Operating Systems, Software Engineering, Databases, Programming Languages
       </p>
     </div>
-  </section>
 
-  <section class="languages">
-    <h2>Languages</h2>
-    <div class="language-list">
-      <div class="language">
-        <strong>English:</strong> Native/Bilingual Proficiency
-      </div>
-      <div class="language">
-        <strong>French:</strong> Elementary Proficiency
-      </div>
+    <div class="degree">
+      <h3>Ontario Scholar, International Baccalaureate Diploma</h3>
+      <p class="school">St. Pope John Paul II Catholic Secondary School</p>
+      <p class="date">2008 - 2012</p>
     </div>
-  </section>
-
-  <section class="volunteer">
-    <h2>Volunteer Experience</h2>
-    <div class="job">
-      <h3>Martial Arts Instructor</h3>
-      <p class="company">Rising Sun Martial Arts</p>
-      <p class="date">June 2009 - August 2015</p>
-      <ul>
-        <li>Taught martial arts techniques and philosophy to students of all ages</li>
-        <li>Developed lesson plans and training programs</li>
-        <li>Mentored students in discipline, focus, and personal growth</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="projects">
-    <h2>Featured Projects</h2>
-    <p class="section-note">Check out my <a href="https://github.com/kylebsingh" target="_blank">GitHub</a> for my latest projects and contributions!</p>
   </section>
 </div>
