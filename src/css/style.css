@@ -931,16 +931,16 @@ details li {
 
   .section-nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    margin: 1rem 0 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0 2rem;
   }
 
   .section-nav a {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.6rem 0.5rem;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 0.5rem;
     background-color: rgba(60, 56, 54, 0.4);
     border: 1px solid var(--bg-light);
     border-radius: 4px;
@@ -953,7 +953,14 @@ details li {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.5rem;
+    width: 100%;
+    min-height: 2.8rem;
+    box-sizing: border-box;
+  }
+
+  .section-nav a::before,
+  .section-nav a::after {
+    display: none !important;
   }
 
   .section-nav a:hover {
@@ -964,9 +971,8 @@ details li {
 
   .linkedin-nav-link {
     color: var(--accent) !important;
-    /* Back to green/accent */
     background-color: rgba(131, 165, 152, 0.1) !important;
-    border-color: var(--accent) !important;
+    border-color: rgba(131, 165, 152, 0.3) !important;
   }
 
   .linkedin-nav-link:hover {
