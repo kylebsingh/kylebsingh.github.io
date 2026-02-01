@@ -937,10 +937,13 @@ details li {
   }
 
   .section-nav a {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    /* Slightly smaller for safer fit */
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.75rem 0.5rem;
+    letter-spacing: 0.05em;
+    /* Reduced for safer fit */
+    padding: 0.5rem 0.25rem;
+    /* Reduced padding */
     background-color: rgba(60, 56, 54, 0.4);
     border: 1px solid var(--bg-light);
     border-radius: 4px;
@@ -954,8 +957,11 @@ details li {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 2.8rem;
+    height: 2.8rem;
+    /* Hard height instead of min-height for guaranteed uniformity */
     box-sizing: border-box;
+    white-space: nowrap;
+    /* Prevent wrapping */
   }
 
   .section-nav a::before,
