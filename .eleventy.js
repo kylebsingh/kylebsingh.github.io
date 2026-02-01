@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copy CSS files to output
   eleventyConfig.addPassthroughCopy("src/css");
 
@@ -8,8 +8,11 @@ module.exports = function(eleventyConfig) {
   // Copy .nojekyll for GitHub Pages
   eleventyConfig.addPassthroughCopy(".nojekyll");
 
+  // Copy CNAME for GitHub Pages
+  eleventyConfig.addPassthroughCopy("CNAME");
+
   // Add a collection for blog posts
-  eleventyConfig.addCollection("posts", function(collectionApi) {
+  eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/*.md").reverse();
   });
 
