@@ -979,6 +979,8 @@ details li {
     color: var(--accent) !important;
     background-color: rgba(131, 165, 152, 0.1) !important;
     border-color: rgba(131, 165, 152, 0.3) !important;
+    margin-top: 0 !important;
+    /* Remove desktop margin that breaks mobile grid */
   }
 
   .linkedin-nav-link:hover {
