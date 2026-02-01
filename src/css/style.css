@@ -15,6 +15,10 @@
   --green: #b8bb26;
 }
 
+.main-container {
+  padding-top: 5rem !important;
+}
+
 /* Reset and Base */
 * {
   margin: 0;
@@ -411,26 +415,26 @@ details li {
 
 /* Blog List */
 .blog-list h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--fg);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .subtitle {
   color: var(--fg-dim);
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 
 .posts {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .post-preview {
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: rgba(60, 56, 54, 0.2);
   border: 1px solid var(--bg-light);
   border-radius: 4px;
@@ -444,8 +448,8 @@ details li {
 }
 
 .post-preview h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
   position: static;
   background: none;
   padding: 0;
@@ -465,15 +469,16 @@ details li {
 
 .post-meta {
   color: var(--fg-darker);
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
   font-family: monospace;
 }
 
 .post-excerpt {
   color: var(--fg-dim);
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .read-more {
@@ -493,16 +498,25 @@ details li {
 }
 
 .post-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--bg-light);
 }
 
 .post-header h1 {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   color: var(--fg);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-weight: 700;
+  line-height: 1.2;
+}
+
+.post-author {
+  font-size: 0.85rem;
+  color: var(--yellow-dim);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
 }
 
 .post-content {
@@ -511,23 +525,45 @@ details li {
   color: var(--fg-dim);
 }
 
+.post-content h1 {
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.post-content h1+h2 {
+  margin-top: 0.5rem;
+}
+
 .post-content h2 {
-  font-size: 1.75rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.45rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
   color: var(--fg);
   position: static;
   background: none;
   padding: 0;
   text-transform: none;
   letter-spacing: normal;
+  line-height: 1.2;
+}
+
+.post-header+.post-content h2 {
+  margin-top: 0.5rem;
 }
 
 .post-content h3 {
-  font-size: 1.4rem;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   color: var(--fg);
+  line-height: 1.2;
+}
+
+.post-content h2+h3 {
+  margin-top: 0.5rem;
 }
 
 .post-content p {
@@ -541,7 +577,7 @@ details li {
 }
 
 .post-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .post-content a {
@@ -580,8 +616,8 @@ details li {
 }
 
 .post-footer {
-  margin-top: 3rem;
-  padding-top: 2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--bg-light);
 }
 
@@ -593,6 +629,151 @@ details li {
 
 .back-link:hover {
   color: var(--accent-bright);
+}
+
+/* Table of Contents - Interactive Sidebar with Progress */
+.post-toc {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  /* Track Width */
+  height: 200px;
+  background-color: rgba(215, 153, 33, 0.1);
+  /* Dimmed Accent (Track) */
+  z-index: 1000;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+  overflow: hidden;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.toc-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 8px;
+  /* Dot height */
+  background-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  transition: top 0.1s linear;
+  pointer-events: none;
+}
+
+.post-toc:hover {
+  width: 340px;
+  height: auto;
+  min-height: 140px;
+  max-height: 85vh;
+  padding: 1.5rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-light);
+  overflow-y: auto;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.post-toc:hover .toc-dot {
+  display: none;
+  /* Hide dot when fully expanded for cleaner look */
+}
+
+.toc-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--fg-darker);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  font-family: monospace;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.post-toc:hover .toc-title {
+  opacity: 1;
+}
+
+.toc ol,
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.post-toc:hover .toc ol,
+.post-toc:hover .toc ul {
+  opacity: 1;
+}
+
+.toc li {
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+.toc li a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.toc li a:hover {
+  color: var(--accent-bright);
+  transform: translateX(6px);
+}
+
+.toc ol ol,
+.toc ul ul {
+  margin-left: 2.5rem;
+  /* Deep indentation as requested */
+  padding-left: 1rem;
+  border-left: 1px solid var(--bg);
+  margin-top: 0.5rem;
+}
+
+.toc ol ol li,
+.toc ul ul li {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hide TOC on very small screens or make it static */
+@media (max-width: 1024px) {
+  .post-toc {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: rgba(60, 56, 54, 0.3);
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .toc-dot {
+    display: none;
+  }
+
+  .post-toc:hover {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .toc-title,
+  .toc ol,
+  .toc ul {
+    opacity: 1;
+  }
 }
 
 /* Footer */
@@ -732,7 +913,34 @@ details li {
     font-size: 1.2rem;
   }
 
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-container {
+    padding: 0.75rem 1.5rem;
+  }
+
   .section-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .section-nav a {
+    font-size: 0.85rem;
+  }
+
+  .linkedin-nav-link {
+    width: 100%;
+    margin-top: 0.25rem;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+  }
+
+  .section-nav a::before {
     display: none;
   }
 

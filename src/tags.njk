@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: All Tags
+permalink: /tags/
+---
+
+<div class="main-container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+  <nav style="margin-bottom: 1.5rem;">
+    <a href="/posts/" style="color: var(--accent); text-decoration: none; font-family: monospace;">← back to posts</a>
+  </nav>
+
+  <h1>Tags</h1>
+  <p class="subtitle">Explore posts by topic</p>
+
+  <div class="tag-list" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+    {% for tag in collections.tagList %}
+      <a href="/tags/{{ tag | slugify }}/" class="tag-link" style="
+        padding: 0.5rem 1rem;
+        background: rgba(var(--accent-rgb), 0.1);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 4px;
+        font-family: monospace;
+      ">
+        #{{ tag }} ({{ collections[tag].length }})
+      </a>
+    {% endfor %}
+  </div>
+</div>

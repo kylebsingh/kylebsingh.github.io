@@ -2,26 +2,68 @@
 layout: layouts/base.njk
 ---
 
-<div style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
-  <nav style="margin-bottom: 3rem;">
-    <a href="/" style="color: var(--accent); text-decoration: none; font-family: monospace; margin-right: 1.5rem;">← home</a>
-    <a href="/blog/" style="color: var(--accent); text-decoration: none; font-family: monospace;">← blog</a>
-  </nav>
-
+<div class="main-container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
   <article class="post">
     <header class="post-header">
+      <div class="post-author">Kyle Bridgemohansingh</div>
       <h1>{{ title }}</h1>
       <p class="post-meta">
         <time datetime="{{ page.date }}">{{ page.date | dateDisplay }}</time>
       </p>
+      <div class="post-tags" style="margin-top: 0.5rem;">
+        {% for tag in tags %}
+          {% if tag != "posts" %}
+            <a href="/tags/{{ tag | slugify }}/" style="
+              font-family: monospace;
+              color: var(--accent);
+              text-decoration: none;
+              margin-right: 0.8rem;
+              font-size: 0.95rem;
+            ">#{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </header>
+
+    {% set tocContent = content | toc %}
+    {% if tocContent %}
+    <div class="post-toc">
+      <div class="toc-dot"></div>
+      <h2 class="toc-title">Table of Contents</h2>
+      {{ tocContent | safe }}
+    </div>
+    {% endif %}
 
     <div class="post-content">
       {{ content | safe }}
     </div>
 
     <footer class="post-footer">
-      <a href="/blog/" class="back-link">← Back to Blog</a>
+      <a href="/posts/" class="back-link">← Back to Posts</a>
     </footer>
   </article>
 </div>
+
+{% if tocContent %}
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const dot = document.querySelector('.toc-dot');
+    const toc = document['querySelector']('.post-toc');
+    const content = document.querySelector('.post-content');
+    
+    const updateProgress = () => {
+      const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      // Map 0-100% scroll to the fixed height of the TOC line (200px)
+      // Subtracting half the dot height (4px) to center it
+      const dotTop = (scrolled / 100) * 200;
+      dot.style.top = `${dotTop}px`;
+    };
+
+    window.addEventListener('scroll', updateProgress);
+    updateProgress(); // Initial call
+  });
+</script>
+{% endif %}

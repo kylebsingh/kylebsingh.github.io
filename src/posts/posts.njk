@@ -1,17 +1,16 @@
 ---
 layout: layouts/base.njk
-title: Blog
-permalink: /blog/
+title: Posts
+permalink: /posts/
 ---
 
-<div style="max-width: 900px; margin: 0 auto; padding: 4rem 2rem;">
+<div class="main-container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
   <nav style="margin-bottom: 3rem;">
     <a href="/" style="color: var(--accent); text-decoration: none; font-family: monospace;">← back to home</a>
   </nav>
 
   <div class="blog-list">
-    <h1>Blog</h1>
-    <p class="subtitle">Thoughts, tutorials, and updates</p>
+    <h1>Posts</h1>
 
     <div class="posts">
       {% for post in collections.posts %}
@@ -22,6 +21,20 @@ permalink: /blog/
           <p class="post-meta">
             <time datetime="{{ post.date }}">{{ post.date | dateDisplay }}</time>
           </p>
+          <div class="post-tags" style="margin-bottom: 0.5rem;">
+            {% for tag in post.data.tags %}
+              {% if tag != "posts" %}
+                <a href="/tags/{{ tag | slugify }}/" style="
+                  font-family: monospace;
+                  color: var(--accent);
+                  text-decoration: none;
+                  margin-right: 0.5rem;
+                  font-size: 0.9rem;
+                  opacity: 0.8;
+                ">#{{ tag }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
           <p class="post-excerpt">{{ post.data.description }}</p>
           <a href="{{ post.url }}" class="read-more">Read more →</a>
         </article>
