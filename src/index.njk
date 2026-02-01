@@ -3,179 +3,106 @@ layout: layouts/base.njk
 title: Home
 ---
 
-<div class="container resume">
-  <header class="hero">
-    <h1>Kyle Bridgemohansingh</h1>
-    <p class="tagline">Software Engineer @ Google</p>
-    <div class="about">
-      <p>
-        I build scalable systems and testing infrastructure. Currently focused on Android testing tools at Google,
-        previously worked on payments at Amazon. Specialized in data visualization, distributed systems, and developer tooling.
-      </p>
-    </div>
-    <div class="contact-links">
-      <a href="https://linkedin.com/in/kylebsingh" target="_blank">LinkedIn</a>
-    </div>
-  </header>
+<div class="site-wrapper">
+  <div class="left-column">
+    <div class="intro">
+      <h1>Kyle Bridgemohansingh</h1>
+      <p class="tagline">Software Engineer @ Google</p>
+      <div class="about">
+        <p>
+          I build scalable systems and testing infrastructure. Currently focused on Android testing tools at Google,
+          previously worked on payments at Amazon. Specialized in data visualization, distributed systems, and developer tooling.
+        </p>
+      </div>
 
-  <section class="experience">
-    <h2>Experience</h2>
+      <nav class="section-nav">
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+    </div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <h3>Software Engineer</h3>
-          <p class="company">Google</p>
-        </div>
-        <div class="job-meta">
-          <p class="date">May 2022 - Present</p>
-          <p class="location-info">California, United States</p>
+
+  </div>
+
+  <div class="right-column">
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="company-group">
+        <h3 class="company-name">Google</h3>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <h4>Software Engineer</h4>
+            <p class="date">May 2022 - Present <span class="location">(Bay Area, CA)</span></p>
+            <p class="job-description">Built Angular-based test visualization platform processing 5M+ datapoints for Android engineering teams, developed test results aggregation system, and contributed Bluetooth shadow classes for Robolectric.</p>
+          </div>
         </div>
       </div>
-      <p class="job-summary">Building testing infrastructure and visualization tools for Android engineering teams.</p>
-      <details>
-        <summary>Show details</summary>
-        <ul>
-          <li>Led design and implementation of an Angular-based test visualization platform capable of processing 5M+ datapoints with 100ms updates, unifying device metrics, logs, and videos in a single interface that measurably accelerated issue diagnosis across multiple Android engineering teams</li>
-          <li>Developed a test results aggregation system that consolidated physical and virtual device-specific test data, creating a standardized solution that improved access to test artifacts and simplified results analysis for multi-device ecosystem teams</li>
-          <li>Contributed to Android testing infrastructure by implementing Bluetooth shadow classes for Robolectric, enabling unit testing for Bluetooth-dependent features without hardware dependencies</li>
-        </ul>
-      </details>
-    </div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <h3>Software Development Engineer</h3>
-          <p class="company">Amazon</p>
-        </div>
-        <div class="job-meta">
-          <p class="date">Mar 2019 - Jan 2022</p>
-          <p class="location-info">Remote</p>
+      <div class="company-group">
+        <h3 class="company-name">Amazon</h3>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <h4>Software Development Engineer</h4>
+            <p class="date">Mar 2019 - Jan 2022 <span class="location">(Remote)</span></p>
+            <p class="job-description">Developed payment systems infrastructure for customer checkout, identified and resolved ~15% latency overhead, and implemented alarm automation and operational excellence improvements.</p>
+          </div>
+          <div class="timeline-entry">
+            <h4>Software Development Engineer Intern</h4>
+            <p class="date">Jan 2017 - Apr 2017 <span class="location">(Seattle, WA)</span></p>
+            <p class="job-description">Developed visual interface for 'Alexa for PC' app announced at CES 2018, connected AVS interfaces, and implemented C# directive deserializer with comprehensive unit tests.</p>
+          </div>
         </div>
       </div>
-      <p class="job-summary">Developed payment systems and infrastructure for customer checkout, improving latency and reliability.</p>
-      <details>
-        <summary>Show details</summary>
-        <ul>
-          <li>Developed an internal automated ordering system reducing individual test duration to support changes required by the European Payment Services Directive and future marketplace launches</li>
-          <li>Designed persistence feature to eliminate the chance of looping upon customer payment challenge resolution, improving service consistency and customer experience</li>
-          <li>Investigated and identified a ~15% latency overhead affecting ~80% of calls in scope within customer checkout, which later improved to a latency-neutral state</li>
-          <li>Mentored intern in designing and developing a successful proof of concept for a containerized widget service</li>
-          <li>Implemented alarm automation, latency guard railing, and standard operating procedure runbook, enhancing operational excellence leading to successful 2020 and 2021 peaks</li>
-        </ul>
-      </details>
-    </div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <h3>Software Development Engineer Intern</h3>
-          <p class="company">Amazon</p>
-        </div>
-        <div class="job-meta">
-          <p class="date">Jan 2017 - Apr 2017</p>
-          <p class="location-info">Seattle, United States</p>
+      <div class="company-group">
+        <h3 class="company-name">University Health Network</h3>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <h4>Developer Intern</h4>
+            <p class="date">Sep 2015 - Dec 2015 <span class="location">(Toronto, ON)</span></p>
+            <p class="job-description">Developed healthcare platform for patient records using Clojure and Reagent (ReactJS), implemented WebSockets for concurrent editing.</p>
+          </div>
+          <div class="timeline-entry">
+            <h4>Developer Intern</h4>
+            <p class="date">Jan 2015 - May 2015 <span class="location">(Toronto, ON)</span></p>
+            <p class="job-description">Built interactive hospital wayfinding web application using Phaser framework with optimized pathfinding algorithms and responsive UI.</p>
+          </div>
         </div>
       </div>
-      <p class="job-summary">Built the visual interface for the 'Alexa for PC' app announced at CES 2018.</p>
-      <details>
-        <summary>Show details</summary>
-        <ul>
-          <li>Developed the visual interface of the 'Alexa for PC' app bundled with PCs from various OEMs as announced at CES 2018</li>
-          <li>Connected relevant Alexa Voice Service (AVS) interfaces to provide visual content based on user queries</li>
-          <li>Created a directive deserializer to convert JSON requests into C# classes which the GUI uses</li>
-          <li>Wrote thorough unit tests in C# to ensure maintainability for future internal and external development</li>
-        </ul>
-      </details>
-    </div>
+    </section>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <h3>Developer Intern</h3>
-          <p class="company">University Health Network</p>
-        </div>
-        <div class="job-meta">
-          <p class="date">Sep 2015 - Dec 2015</p>
-          <p class="location-info">Toronto, Canada</p>
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="company-group">
+        <h3 class="company-name">University of Toronto Scarborough</h3>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <h4>Honours Bachelor's Degree, Computer Science</h4>
+            <p class="date">2012 - 2019 <span class="location">(Toronto, ON)</span></p>
+          </div>
         </div>
       </div>
-      <p class="job-summary">Developed healthcare platform for patient records using Clojure and ReactJS.</p>
-      <details>
-        <summary>Show details</summary>
-        <ul>
-          <li>Developed a healthcare platform to document and communicate patient records between teams using Clojure</li>
-          <li>Translated data in organization databases and services to maintain authenticity and validity</li>
-          <li>Improved hospital processes by utilizing WebSockets to implement concurrent editing features</li>
-          <li>Designed an intuitive UI/UX using Reagent (ReactJS) for healthcare practitioners while meeting the needs of the industry</li>
-        </ul>
-      </details>
-    </div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <h3>Developer Intern</h3>
-          <p class="company">University Health Network</p>
-        </div>
-        <div class="job-meta">
-          <p class="date">Jan 2015 - May 2015</p>
-          <p class="location-info">Greater Toronto Area, Canada</p>
+      <div class="company-group">
+        <h3 class="company-name">St. Pope John Paul II Catholic Secondary School</h3>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <h4>Ontario Scholar</h4>
+            <p class="date">2008 - 2012 <span class="location">(Toronto, ON)</span></p>
+          </div>
+          <div class="timeline-entry">
+            <h4>International Baccalaureate Diploma</h4>
+            <p class="date">2008 - 2012 <span class="location">(Toronto, ON)</span></p>
+          </div>
         </div>
       </div>
-      <p class="job-summary">Created interactive wayfinding web application for hospital navigation.</p>
-      <details>
-        <summary>Show details</summary>
-        <ul>
-          <li>Researched and developed an interactive wayfinding web application from concept to pilot leveraging the Phaser framework</li>
-          <li>Analyzed and compared multiple algorithms to optimize the chosen path between floors</li>
-          <li>Implemented a responsive UI/UX with Reagent (ReactJS), which utilizes appropriate features of the user's device</li>
-          <li>Collaborated with project managers and administrative assistants to launch a successful pilot</li>
-        </ul>
-      </details>
-    </div>
-  </section>
+    </section>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <div class="skill-grid">
-      <div class="skill-category">
-        <h4>Languages</h4>
-        <p>Python, Clojure, C#, JavaScript/TypeScript</p>
-      </div>
-      <div class="skill-category">
-        <h4>Frontend</h4>
-        <p>Angular, React, Reagent (ReactJS), HTML/CSS</p>
-      </div>
-      <div class="skill-category">
-        <h4>Backend & Infrastructure</h4>
-        <p>Testing Infrastructure, Distributed Systems, WebSockets</p>
-      </div>
-      <div class="skill-category">
-        <h4>Areas of Expertise</h4>
-        <p>Android Testing, Data Visualization, System Design</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="education">
-    <h2>Education</h2>
-
-    <div class="degree">
-      <h3>Honours Bachelor's Degree, Computer Science</h3>
-      <p class="school">University of Toronto Scarborough</p>
-      <p class="date">2012 - 2019</p>
-      <p class="coursework">
-        Computability and Computational Complexity, Computer Organization,
-        Data Structures, Operating Systems, Software Engineering, Databases, Programming Languages
-      </p>
-    </div>
-
-    <div class="degree">
-      <h3>Ontario Scholar, International Baccalaureate Diploma</h3>
-      <p class="school">St. Pope John Paul II Catholic Secondary School</p>
-      <p class="date">2008 - 2012</p>
-    </div>
-  </section>
+    <footer class="footer">
+      <p>built with eleventy</p>
+    </footer>
+  </div>
 </div>
+
