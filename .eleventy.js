@@ -51,6 +51,10 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].filter(tag => tag !== "posts").sort();
   });
 
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    return new Date(dateObj).toISOString().split('T')[0];
+  });
+
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return new Date(dateObj).toLocaleDateString('en-US', {
       year: 'numeric',

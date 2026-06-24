@@ -59,7 +59,7 @@ You can also trigger a deployment manually:
 ## Customization
 
 - **Homepage**: Edit `src/index.njk` to update your resume content
-- **Blog posts**: Add new markdown files to `src/blog/`
+- **Blog posts**: Add new markdown files to `src/posts/`
 - **Styling**: Modify `src/css/style.css`
 - **Layouts**: Templates are in `src/_includes/layouts/`
 
